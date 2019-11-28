@@ -91,7 +91,7 @@ installMonitoring(){
     sed -i "s#WEBHOOK#$INWBHK#g" $CONFALRT
     
     LOG "Deploying docker compose"
-    docker stack deploy -c docker-compose.yml monitoring
+    docker stack deploy -c $(pwd)/docker-compose.yml monitoring
 
     echo "Use \"docker service ls\" to list docker services"
 

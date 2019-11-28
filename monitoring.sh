@@ -64,7 +64,6 @@ installELK(){
 
 installMonitoring(){
     local DIRREPO='/home/super/monitoring'
-    local REPO=''
     local CONFPRO='conf/prometheus/prometheus.yml'
     local CONFALRT='conf/alertmanager/config.yml'
     local IPADDR=`hostname -I | awk '{print $1}'`
@@ -77,8 +76,6 @@ installMonitoring(){
     LOG "Instalando net-data" #porta 19999
     bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 
-    LOG "Cloning git from github"
-    git clone $REPO
     LOG "Changing to monitoring project directory"
     cd $DIRREPO
 

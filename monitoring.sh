@@ -63,8 +63,8 @@ installELK(){
 }
 
 installMonitoring(){
-    local CONFPRO=$(pwd)conf/prometheus/prometheus.yml
-    local CONFALRT=$(pwd)/conf/alertmanager/config.yml
+    local CONFPRO=$(pwd)/monitoring/conf/prometheus/prometheus.yml
+    local CONFALRT=$(pwd)/monitoring/conf/alertmanager/config.yml
     local IPADDR=`hostname -I | awk '{print $1}'`
 
     #Necessário utilizar docker-swarm caso for mais de um cluster
